@@ -15,6 +15,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowInsets;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Interpolator;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
@@ -106,6 +108,7 @@ public class ArticleDetailActivity extends AppCompatActivity
             }
         }
     }
+
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
