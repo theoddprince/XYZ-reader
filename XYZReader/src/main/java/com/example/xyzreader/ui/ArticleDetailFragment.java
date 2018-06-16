@@ -59,14 +59,10 @@ public class ArticleDetailFragment extends Fragment implements
     private long mItemId;
     private View mRootView;
     private int mMutedColor = 0xFF333333;
-    private ObservableScrollView mScrollView;
-    private NestedScrollView mNestedScrollView;
-    private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
     private CoordinatorLayout mCoordinatorLayout;
     private ColorDrawable mStatusBarColorDrawable;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private AppBarLayout mAppBarLayout;
-    private Menu menu;
     private int mTopInset;
     private View mPhotoContainerView;
     private ImageView mPhotoView;
@@ -138,6 +134,12 @@ public class ArticleDetailFragment extends Fragment implements
         final Toolbar mToolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(mToolbar);
 
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((AppCompatActivity)getActivity()).onSupportNavigateUp();
+            }
+        });
         //AppBarLayout
         mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean isShow = false;
